@@ -1,0 +1,77 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <p>
+        <a href="/">Home page</a><br>
+        <a href="/newtask">Insert new task</a><br>
+        <a href="/newdeveloper">Add new developer</a></br>
+        <a href="/alldevs">All developers</a><br>
+        <a href="/updatetask">Update task</a><br>
+        <a href="/alltasks">All tasks</a><br>
+        <a href="/deletetask">Delete a task</a><br>
+        <a href='/deleteall'>delete all complete task</a>
+
+    </p>
+    <table>
+        <tr>
+            <th>
+                Developer ID
+            </th>
+            <th>
+                First name
+            </th>
+            <th>
+                Last name
+            </th>
+            <th>
+                Level
+            </th>
+            <th>
+                State
+            </th>
+            <th>
+                Suburb
+            </th>
+            <th>
+                Street
+            </th>
+            <th>
+                Unit
+            </th>
+        </tr>
+        <% for (let i=0; i<devDb.length; i++){ %>
+        <tr>
+            <td>
+                <%= devDb[i]._id %>
+            </td>
+            <td>
+                <%= devDb[i].name.firstName %>
+            </td>
+            <td>
+                <%= devDb[i].name.lastName %>
+            </td>
+            <td>
+                <%= devDb[i].level %>
+            </td>
+            <td>
+                <%= devDb[i].address.state %>
+            </td>
+            <td>
+                <%= devDb[i].address.suburb %>
+            </td>
+            <td>
+                <%= devDb[i].address.street %>
+            </td>
+            <td>
+                <%= devDb[i].address.unit %>
+            </td>
+        </tr>
+        <% } %>
+    </table>
+</body>
+
+</html>
